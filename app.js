@@ -4,11 +4,32 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-
+import mongoose from './db/mongoose'
 import index from './routes/index';
 import users from './routes/users';
 
 const app = express();
+
+// var Todo = mongoose.model('Todo', {
+//     text:{
+//         type: String
+//     },
+//     completed: {
+//         type: Boolean
+//     },
+//
+//     completedAt: {
+//         type: Number
+//     }
+//
+// });
+//
+// var todo = new Todo({ text: 'a super test'});
+// todo.save().then((doc)=>{
+//     console.log(doc)
+// },(e)=>{
+//     console.log(e)
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
