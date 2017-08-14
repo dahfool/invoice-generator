@@ -4,32 +4,11 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import mongoose from './db/mongoose'
 import index from './routes/index';
 import users from './routes/users';
+import companies from './routes/companies';
 
 const app = express();
-
-// var Todo = mongoose.model('Todo', {
-//     text:{
-//         type: String
-//     },
-//     completed: {
-//         type: Boolean
-//     },
-//
-//     completedAt: {
-//         type: Number
-//     }
-//
-// });
-//
-// var todo = new Todo({ text: 'a super test'});
-// todo.save().then((doc)=>{
-//     console.log(doc)
-// },(e)=>{
-//     console.log(e)
-// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api/companies', companies);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
