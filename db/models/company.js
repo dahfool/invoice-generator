@@ -4,14 +4,25 @@ const CompanySchema = mongoose.Schema({
     name: {
         type: String
     },
-    completed: {
-        type: Boolean
+    address: {
+        type: String
     },
-    completedAt: {
+    city: {
+        type: String
+    },
+    postcode: {
+        type: String
+    },
+    number: {
+        type: Number
+    },
+    email: {
+        type: String
+    },
+    vat: {
         type: Number
     }
 });
-
 
 const Company = mongoose.model('Company', CompanySchema);
 
